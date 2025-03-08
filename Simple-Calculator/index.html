@@ -9,11 +9,11 @@
 <body>
     <h1>Simple Calculator</h1>
     <input type="text" id="display" disabled> <br>
-    <button id="clear">C</button> <button id="divide">/</button> <br>
-    <button id="seven">7</button> <button id="eight">8</button> <button id="nine">9</button> <button id="multiply">*</button> <br> 
-    <button id="four">4</button> <button id="five">5</button> <button id="six">6</button> <button id="subtract">-</button> <br>
-    <button id="one">1</button> <button id="two">2</button> <button id="three">3</button> <button id="add">+</button> <br>
-    <button id="zero">0</button> <button id="decimal">.</button> <button id="equals">=</button>
+    <button id="clear" onclick="clearDisplay()">C</button> <button id="divide" onclick="nextNumber('/')">/</button> <br>
+    <button id="seven" onclick="displayUpdate('7')">7</button> <button id="eight" onclick="displayUpdate('8')">8</button> <button id="nine" onclick="displayUpdate('9')">9</button> <button id="multiply" onclick="nextNumber('*')">*</button> <br> 
+    <button id="four" onclick="displayUpdate('4')">4</button> <button id="five" onclick="displayUpdate('5')">5</button> <button id="six" onclick="displayUpdate('6')">6</button> <button id="subtract" onclick="nextNumber('-')">-</button> <br>
+    <button id="one" onclick="displayUpdate('1')">1</button> <button id="two" onclick="displayUpdate('2')">2</button> <button id="three" onclick="displayUpdate('3')">3</button> <button id="add" onclick="nextNumber('+')">+</button> <br>
+    <button id="zero" onclick="displayUpdate('0')">0</button> <button id="decimal" onclick="displayUpdate('.')">.</button> <button id="equals" onclick="calculate()">=</button>
     <script src="script.js"></script>
 </body>
 </html>
