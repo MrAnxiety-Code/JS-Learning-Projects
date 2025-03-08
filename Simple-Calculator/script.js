@@ -3,13 +3,20 @@ let buttons = document.querySelectorAll('button');
 let displayValue = '';
 let operator = [];
 let equation = [];
+let firstTime = true;
 function displayUpdate(value) {
+    if(!firstTime) {
+        displayValue = '';
+        display.value = displayValue;
+        firstTime = true;
+    }
     displayValue += value;
     display.value = displayValue;
 }
 function clearDisplay() {
     displayValue = '';
     display.value = displayValue;
+    firstTime = true;
 }
 function nextNumber(buttonOperator) {
     equation.push(displayValue);
@@ -34,4 +41,5 @@ function calculate() {
     display.value = displayValue;
     equation = [];
     operator = [];
+    firstTime = false;
 }
