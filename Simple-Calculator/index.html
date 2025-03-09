@@ -8,19 +8,19 @@
 </head>
 <body>
     <h1>Simple Calculator</h1>
-    <input type="text" id="display" disabled> <br>
     <table>
+        <th colspan="4"><input type="text" id="display" disabled></th>
         <tr>
             <td><button id="clear" onclick="clearDisplay()">C</button></td>
             <td></td> 
             <td></td>
-            <td><button id="divide" onclick="nextNumber('/')">/</button></td>
+            <td><button id="divide" onclick="nextNumber('/')">÷</button></td>
         </tr>
         <tr>
             <td><button id="seven" onclick="displayUpdate('7')">7</button></td>
             <td><button id="eight" onclick="displayUpdate('8')">8</button></td>
             <td><button id="nine" onclick="displayUpdate('9')">9</button></td>
-            <td><button id="multiply" onclick="nextNumber('*')">*</button></td>
+            <td><button id="multiply" onclick="nextNumber('*')">x</button></td>
         </tr>
         <tr>
             <td><button id="four" onclick="displayUpdate('4')">4</button></td>
