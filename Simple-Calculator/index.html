@@ -8,12 +8,39 @@
 </head>
 <body>
     <h1>Simple Calculator</h1>
-    <input type="text" id="display" disabled> <br>
-    <button id="clear" onclick="clearDisplay()">C</button> <button id="divide" onclick="nextNumber('/')">/</button> <br>
-    <button id="seven" onclick="displayUpdate('7')">7</button> <button id="eight" onclick="displayUpdate('8')">8</button> <button id="nine" onclick="displayUpdate('9')">9</button> <button id="multiply" onclick="nextNumber('*')">*</button> <br> 
-    <button id="four" onclick="displayUpdate('4')">4</button> <button id="five" onclick="displayUpdate('5')">5</button> <button id="six" onclick="displayUpdate('6')">6</button> <button id="subtract" onclick="nextNumber('-')">-</button> <br>
-    <button id="one" onclick="displayUpdate('1')">1</button> <button id="two" onclick="displayUpdate('2')">2</button> <button id="three" onclick="displayUpdate('3')">3</button> <button id="add" onclick="nextNumber('+')">+</button> <br>
-    <button id="zero" onclick="displayUpdate('0')">0</button> <button id="decimal" onclick="displayUpdate('.')">.</button> <button id="equals" onclick="calculate()">=</button>
+    <table>
+        <th colspan="4"><input type="text" id="display" disabled></th>
+        <tr>
+            <td><button id="clear" onclick="clearDisplay()">C</button></td>
+            <td></td> 
+            <td></td>
+            <td><button id="divide" onclick="nextNumber('/')">÷</button></td>
+        </tr>
+        <tr>
+            <td><button id="seven" onclick="displayUpdate('7')">7</button></td>
+            <td><button id="eight" onclick="displayUpdate('8')">8</button></td>
+            <td><button id="nine" onclick="displayUpdate('9')">9</button></td>
+            <td><button id="multiply" onclick="nextNumber('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button id="four" onclick="displayUpdate('4')">4</button></td>
+            <td><button id="five" onclick="displayUpdate('5')">5</button></td>
+            <td><button id="six" onclick="displayUpdate('6')">6</button></td>
+            <td><button id="subtract" onclick="nextNumber('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button id="one" onclick="displayUpdate('1')">1</button></td>
+            <td><button id="two" onclick="displayUpdate('2')">2</button></td>
+            <td><button id="three" onclick="displayUpdate('3')">3</button></td>
+            <td><button id="add" onclick="nextNumber('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button id="zero" onclick="displayUpdate('0')">0</button></td>
+            <td><button id="decimal" onclick="displayUpdate('.')">.</button></td>
+            <td></td>
+            <td><button id="equals" onclick="calculate()">=</button></td>
+        </tr>
+    </table>
     <script src="script.js"></script>
 </body>
 </html>
