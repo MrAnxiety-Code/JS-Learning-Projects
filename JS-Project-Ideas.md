@@ -72,3 +72,4 @@ By working on these projects, you'll gain valuable experience in applying the co
    * Take a number and determine if it's odd or even.
       * Odd numbers: multiply by 3 and add 1.
       * Even numbers: divide by 2.
+   * Show the number of steps for a given number to get to 1. Also known as, print the length of the array I store all the numbers in before printing them out.
