@@ -64,3 +64,11 @@ That's great you're working through the intermediate JavaScript course! Building
  * Deploy Your Project: If possible, deploy your project online to share it with others. Services like GitHub Pages, Netlify, or Vercel are great for this.
 
 By working on these projects, you'll gain valuable experience in applying the concepts you've learned and build a portfolio of your work. Good luck!
+
+## My Own Ideas
+* -[ ] The Collatz Conjecture
+   * From a [YouTube Short](https://youtube.com/shorts/8fNFd2Xswjs?si=dcCPEzodhDckceyb)
+   * [Full video](https://youtu.be/094y1Z2wpJg?si=FA7ACnOH8Jyk1UzG)
+   * Take a number and determine if it's odd or even.
+      * Odd numbers: multiply by 3 and add 1.
+      * Even numbers: divide by 2.
