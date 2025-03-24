@@ -66,7 +66,7 @@ That's great you're working through the intermediate JavaScript course! Building
 By working on these projects, you'll gain valuable experience in applying the concepts you've learned and build a portfolio of your work. Good luck!
 
 ## My Own Ideas
-* -[ ] The Collatz Conjecture
+* -[x] The Collatz Conjecture
    * From a [YouTube Short](https://youtube.com/shorts/8fNFd2Xswjs?si=dcCPEzodhDckceyb)
    * [Full video](https://youtu.be/094y1Z2wpJg?si=FA7ACnOH8Jyk1UzG)
    * Take a number and determine if it's odd or even.
