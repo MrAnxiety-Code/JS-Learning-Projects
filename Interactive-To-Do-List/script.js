@@ -1,26 +1,43 @@
-var ulist = document.getElementById("savedLists");
-var newListUI = document.getElementById("newListUI");
+var toDoList = document.getElementById('toDoList');
+var taskArray = [];
 
-function loadList(){
-    let listItem = document.createElement("button");
-    listItem.innerHTML = "There's nothing here yet!";
-    let listItem2 = document.createElement("button");
-    listItem2.innerHTML = "There's nothing here either!";
-    let linebreak = document.createElement("br");
-    ulist.appendChild(listItem);
-    ulist.appendChild(linebreak);
-    ulist.appendChild(listItem2);
+function nameTask() {
+    let li = document.createElement('li');
+    toDoList.appendChild(li);
+    let task = document.createElement('input');
+    task.type = 'text';
+    task.id = 'taskTextBox';
+    li.appendChild(task);
+    let saveTask = document.createElement('button');
+    saveTask.innerHTML = 'Save';
+    saveTask.id = 'saveNewTaskButton';
+    li.appendChild(saveTask);
+    saveTask.addEventListener('click', function(){addTask(task.value);});
 }
 
-function nameList(){
-    let nameText = document.createElement("input");
-    nameText.type = "text";
-    nameText.id = "listName";
-    newListUI.appendChild(nameText);
-    let createButton = document.createElement("button");
-    createButton.innerHTML = "Create List";
-    newListUI.appendChild(createButton);
-    createButton.onclick = createList(nameText.value);
+function addTask(task){
+    if(task != ''){
+        let li = toDoList.lastElementChild;
+        let taskTextBox = document.getElementById('taskTextBox');
+        let saveNewTaskButton = document.getElementById('saveNewTaskButton');
+        taskTextBox.remove();
+        saveNewTaskButton.remove();
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `task${taskArray.length}`;
+        checkbox.htmlfor = `task${taskArray.length}`;
+        li.appendChild(checkbox);
+        let label = document.createElement('label');
+        label.innerHTML = task;
+        li.appendChild(label);
+        taskArray.push(task);
+    }
+    else {
+        return; //do nothing if the task is empty
+    }
 }
 
-function createList(name){}
+function clearAllTasks(){
+    toDoList.replaceChildren();
+    taskArray = [];
+}

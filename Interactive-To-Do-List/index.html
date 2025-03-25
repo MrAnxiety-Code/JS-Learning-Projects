@@ -6,14 +6,16 @@
     <title>Interactive To-Do List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="loadList()">
-    <h1>TODO</h1>
-    <div id = "newListUI">
-        <button id="newList" onclick="nameList()">New List</button>
+<body>
+    <div class = "nav">
+        <button id="addTask" onclick="nameTask()">New Task</button>
+        <button id="clearAll" onclick="clearAllTasks()">Clear All</button>
     </div>
-    <h2>My Lists</h2>
-    <ul id="savedLists">
-    </ul>
+    <div class = "main">
+        <h1>TODO</h1>
+        <ul id="toDoList">
+        </ul>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
