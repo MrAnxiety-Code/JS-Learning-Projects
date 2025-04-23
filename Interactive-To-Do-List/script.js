@@ -1,14 +1,16 @@
 var toDoList = document.getElementById('toDoList');
-var taskArr = localStorage.getItem('TODO') ? JSON.parse(localStorage.getItem('TODO')) : [];
+var taskArr = [];
 
 function buildToDoList() {
 //Check if there is a saved task in local storage
 if(localStorage.getItem('TODO') != null){
-    //Get the saved task from local storage
-    console.log("taskArr: " + taskArr);
+    //Get the saved task from local storage and parse it into an array that is local to this function
+    //This is done to prevent duplicates in taskArr and local storage
+    let loadArr = JSON.parse(localStorage.getItem('TODO'));
+    console.log("loadArr: " + loadArr);
     localStorage.clear(); //clear local storage to prevent duplicates
     console.log("localStorage: " + localStorage.getItem('TODO'));
-    taskArr.forEach(loadTask);
+    loadArr.forEach(loadTask);
 }
 else{
     return; //do nothing if there are no saved tasks
@@ -76,6 +78,7 @@ function addTask(task,loadCheckbox){
         taskArr.push(`${checkbox.checked}${task}`);
         localStorage.setItem('TODO', JSON.stringify(taskArr));
         console.log("localStorage at end of addTask: " + localStorage.getItem('TODO'));
+        console.log("taskArr at end of addTask: " + taskArr);
         return; //return to prevent the task from being added again
     }
     else {
