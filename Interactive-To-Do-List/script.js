@@ -18,6 +18,7 @@ else{
 }
 
 function loadTask(taskSlice) {
+    if(taskSlice != null){
     let li = document.createElement('li');
     toDoList.appendChild(li);
     if(taskSlice.slice(0,1) == 't'){
@@ -26,11 +27,16 @@ function loadTask(taskSlice) {
     else{
         addTask(taskSlice.slice(5));
     }
+    }
+    else{
+        return; //do nothing if the task is null
+    }
 }
 
 function nameTask() {
     //Create a new list item for the new task
     let li = document.createElement('li');
+    li.id = 'newTask';
     toDoList.appendChild(li);
     //Textbox for input
     let task = document.createElement('input');
@@ -43,6 +49,12 @@ function nameTask() {
     saveTask.id = 'saveNewTaskButton';
     saveTask.addEventListener('click', function(){addTask(task.value);});
     li.appendChild(saveTask);
+    //Button to cancel creating a new task
+    let cancelTask = document.createElement('button');
+    cancelTask.innerHTML = 'Cancel';
+    cancelTask.id = 'cancelNewTaskButton';
+    cancelTask.addEventListener('click', function(){li.remove();}); //removing li removes all the children as well
+    li.appendChild(cancelTask);
 }
 
 function addTask(task,loadCheckbox){
@@ -51,11 +63,15 @@ function addTask(task,loadCheckbox){
         //Remove the textbox and save button if they exist
         let taskTextBox = document.getElementById('taskTextBox');
         let saveNewTaskButton = document.getElementById('saveNewTaskButton');
+        let cancelNewTaskButton = document.getElementById('cancelNewTaskButton');
         if(taskTextBox){
             taskTextBox.remove();
         }
         if(saveNewTaskButton){
             saveNewTaskButton.remove();
+        }
+        if(cancelNewTaskButton){
+            cancelNewTaskButton.remove();
         }
         //Create a checkbox for the task
         let checkbox = document.createElement('input');
@@ -74,6 +90,18 @@ function addTask(task,loadCheckbox){
         label.htmlfor = `${taskArr.length}`;
         label.innerHTML = task;
         li.appendChild(label);
+        //Create a delete button for the task
+        let deleteTask = document.createElement('button');
+        deleteTask.innerHTML = 'Delete';
+        deleteTask.id = 'deleteTaskButton';
+        deleteTask.addEventListener('click', function(){
+            delete taskArr[checkbox.id]; //remove the task from the array
+            localStorage.setItem('TODO', JSON.stringify(taskArr)); //update local storage
+            taskArr = []; //clear the array to prevent duplicates
+            toDoList.replaceChildren(); //remove all the tasks from the list
+            buildToDoList(); //rebuild the list to remove the task from local storage
+        });
+        li.appendChild(deleteTask);
         //Add the task to the array and local storage
         taskArr.push(`${checkbox.checked}${task}`);
         localStorage.setItem('TODO', JSON.stringify(taskArr));
