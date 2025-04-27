@@ -60,7 +60,7 @@ function nameTask() {
 function addTask(task,loadCheckbox){
     if(task != ''){
         var li = toDoList.lastElementChild;
-        //Remove the textbox and save button if they exist
+        //Remove the textbox and buttons if they exist
         let taskTextBox = document.getElementById('taskTextBox');
         let saveNewTaskButton = document.getElementById('saveNewTaskButton');
         let cancelNewTaskButton = document.getElementById('cancelNewTaskButton');
@@ -85,7 +85,7 @@ function addTask(task,loadCheckbox){
             localStorage.setItem('TODO', JSON.stringify(taskArr));
         });
         li.appendChild(checkbox);
-        //Create a label for the task, this is what stores the task
+        //Create a label for the task, this is what stores the content of the task
         let label = document.createElement('label');
         label.htmlfor = `${taskArr.length}`;
         label.innerHTML = task;
@@ -95,11 +95,11 @@ function addTask(task,loadCheckbox){
         deleteTask.innerHTML = 'Delete';
         deleteTask.id = 'deleteTaskButton';
         deleteTask.addEventListener('click', function(){
-            delete taskArr[checkbox.id]; //remove the task from the array
+            delete taskArr[checkbox.id]; //remove the task from the array, what remains is a null value
             localStorage.setItem('TODO', JSON.stringify(taskArr)); //update local storage
             taskArr = []; //clear the array to prevent duplicates
-            toDoList.replaceChildren(); //remove all the tasks from the list
-            buildToDoList(); //rebuild the list to remove the task from local storage
+            toDoList.replaceChildren(); //remove all the tasks from the list to prevent duplicates
+            buildToDoList(); //rebuild the list, updating the index ID (checkbox.id) of the remaining tasks
         });
         li.appendChild(deleteTask);
         //Add the task to the array and local storage
