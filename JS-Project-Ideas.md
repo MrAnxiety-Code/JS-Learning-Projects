@@ -73,3 +73,7 @@ By working on these projects, you'll gain valuable experience in applying the co
       * Odd numbers: multiply by 3 and add 1.
       * Even numbers: divide by 2.
    * Show the number of steps for a given number to get to 1. Also known as, print the length of the array I store all the numbers in before printing them out.
+* -[ ] 12 to 24 Hour Time Converter
+  * Convert 12 hour time to 24 hour time and vice-versa.
+  * Show the current time in both formats and have it update every second.
+  * Could spin it out into a time zone converter.
